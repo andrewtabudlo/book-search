@@ -1,0 +1,16 @@
+<ul class="collection">
+
+<% i = 0 %>
+  <% @books.each do |book| %>
+    <li class="collection-item avatar">
+      <img src=<%= book.image_link(:zoom => 5) %> alt="" class="circle">
+      <span class="title"><%= book.title %></span>
+      <p><%= book.authors %><br>
+        <%= book.isbn %>
+      </p>
+      <a href="/search/selection/<%= book.isbn %>" class="secondary-content"><i class="material-icons">grade</i></a>
+    </li>
+    <% i += 1 %>
+  <% end %>
+
+</ul>
